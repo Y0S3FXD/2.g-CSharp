@@ -17,6 +17,17 @@ else
 {
   Console.WriteLine("Read the source code for this program to learn more!"); 
 }
+string yes = "Yes = Press Uparrow ↑";
+string no = "No = Press Downarrow ↓";
+Console.WriteLine("Are you good with math?\n" + yes + "\n"+ no);
+if (Console.ReadKey().Key==ConsoleKey.UpArrow)
+{
+  Console.WriteLine("Well get ready :) ");
+
+}
+
+Console.ReadKey();
+
 
 if(2 > 5)
 {
@@ -68,7 +79,7 @@ switch(expression)
     break;
 }
 */
-
+/*
 Console.WriteLine("Input a number between 1 and 7");
 string inputFromConsole = Console.ReadLine();
 int day = int.Parse(inputFromConsole);
@@ -103,4 +114,5 @@ switch (day)
 Console.ReadLine();
 #endregion
 
-
+*/
+#endregion
