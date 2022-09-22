@@ -44,18 +44,10 @@ Thread.Sleep(2000);
 
 Console.WriteLine("Do you want to know what humanbeings have done to this earth?");
 Thread.Sleep(2000);
-Console.WriteLine("I dont think you can write english, \nPress upwards arrow ↑ For Yes \nPress Downwards ↓ arrow for no");
+Console.WriteLine("I dont think you can write english, You can Use Arrows To move arround");
+Thread.Sleep(2000);
+Console.WriteLine("Press upwards arrow ↑ For Yes \nPress Downwards ↓ arrow for no");
 /*
-* The four main basic types we we will work with in the beginning are:
-* bool, Int, Float and String   
-* bool or boolean, can only be 'true' or 'false'
-* Int, or integer, is a whole number; 1, 2, 3
-* Float is a decimal number; 3.14 or 7.777
-* Strings is just text found between quotationmarks "This is a string, easy right?"
-*
-* Programmers use these different types to better communicate their thoughts and optimize the program
-* C# have, at the time of writing; 10 different types of numbers, choosing the right ones can be key to your objective.
-*
 * There are many different data types which can be explored in the Microsoft C# documentation, see link below.
 * https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types
 */
@@ -65,20 +57,27 @@ string rightar = "Press Rightarrow →";
 string leftar = "Press Leftarrow ←";
 
 #region storytelling1
+if (Console.ReadKey().Key == ConsoleKey.UpArrow)
+{
+    Console.WriteLine("im glad you wanna listen to this!");
+    Thread.Sleep(500);
+    Console.WriteLine("Im just wondering what generation you wanna hear about?\n1.Gen " + upar + " \n2.Gen " + downar + " \n3.Gen "
+    + rightar + "\n4.Gen =" + leftar);
+/*
 
 if (Console.ReadKey().Key == ConsoleKey.UpArrow)
 {
     Console.WriteLine("im glad you wanna listen to this!");
     Thread.Sleep(500);
-    Console.WriteLine("Im just wondering what generation you wanna hear about?\n 1.Gen " + upar + " \n2.Gen " + downar + " \n3.Gen "
+    Console.WriteLine("Im just wondering what generation you wanna hear about?\n1.Gen " + upar + " \n2.Gen " + downar + " \n3.Gen "
     + rightar + "\n4.Gen =" + leftar);
     Thread.Sleep(500);
     if (Console.ReadKey().Key == ConsoleKey.UpArrow)
     {
         Console.WriteLine("Well," + Name + " Welcome to Generation 1");
-        Thread.Sleep(300);
-        Console.WriteLine("Ur father, fathers, fathers's, fathers'ss was a good man for what he did :) \n i wish that you agree \n Yes"
-         + upar + "\n No" + downar);
+        Thread.Sleep(500);
+        Console.WriteLine("Ur father, fathers, fathers's, fathers'ss was a good man for what he did :) \ni wish that you agree \nYes"
+         + upar + "\nNo" + downar);
         if (Console.ReadKey().Key == ConsoleKey.UpArrow)
         {
             Console.WriteLine("Im so glad to hear that buddy");
@@ -89,23 +88,59 @@ if (Console.ReadKey().Key == ConsoleKey.UpArrow)
             {
 
                 Console.WriteLine(apologizemsg);
-                Thread.Sleep(400);
+                Thread.Sleep(1300);
                 Console.WriteLine("The Rest of the story");
             }
             else
             {
-                Thread.Sleep(10000);
+                Thread.Sleep(5000);
                 Console.WriteLine(apologizemsg);
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
                 Console.WriteLine("The Rest of the story");
             }
         }
-        Console.WriteLine("The Rest of the story");
-        Console.WriteLine("...");
-        Console.ReadLine();
-
     }
 }
+if (Console.ReadKey().Key == ConsoleKey.DownArrow)
+{
+    Thread.Sleep(1000);
+    Console.WriteLine("Welcome to Gen.2 This is the funniest Gen because here you can play with  ")
+}
+*/
+var Keychose = Console.ReadKey();
+Random rnd = new Random();
 
-Console.WriteLine("The end");
+switch (Keychose.Key)
+{
+    case ConsoleKey.UpArrow:
+        Console.WriteLine("Well," + Name + " Welcome to Generation 1");
+        Thread.Sleep(500);
+        Console.WriteLine("Ur father, fathers, fathers's, fathers'ss was a good man for what he did :) \ni wish that you agree \nYes"
+         + upar + "\nNo" + downar);
+        if (Console.ReadKey().Key == ConsoleKey.UpArrow)
+        {
+            Console.WriteLine("Im so glad to hear that buddy");
+            Thread.Sleep(1000);
+            Console.WriteLine("Give me a minute im crying ;( ");
+            string apologizemsg = "ok im sorry for the waiting, Dont go away ";
+            if (Console.ReadKey().Key == ConsoleKey.Escape)
+            {
+                Console.WriteLine(apologizemsg);
+                Thread.Sleep(1300);
+                Console.WriteLine("The Rest of the story");
+                Console.ReadKey();
+            }
+        }
+
+        break;
+    case ConsoleKey.DownArrow:
+        Console.WriteLine("Well" + Name + "Welcome to Gen 2, This is an exciting generation, because here The  \"X man Game\" Was invented, So get ready to try it out");
+        string[] Herosname = new string[] {"Sokolala", "Bomshakalaka", "Tsikolima", "kosko"};
+        int indx = rnd.Next(Herosname.Length);
+        Console.WriteLine($"Name: {Herosname[indx]}"); 
+        break;
+    case ConsoleKey.RightArrow:
+    case ConsoleKey.LeftArrow:
+        break;
+}
 #endregion

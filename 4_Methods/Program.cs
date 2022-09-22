@@ -25,7 +25,7 @@ void HelloMethod(string message)
 
 HelloMethod("This string matches the methods parameter input!");
 //HelloMethod(1); //Doesn't work
-
+int s = Convert.ToInt32(Console.ReadLine());
 #endregion
 
 #region Linear fibonacci
