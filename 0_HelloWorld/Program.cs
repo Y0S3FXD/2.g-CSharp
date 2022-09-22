@@ -2,30 +2,21 @@
 using System.Reflection.PortableExecutable;
 Random rnd = new Random();
 
- 
+
 Console.WriteLine("Hello alien \nWhat is your galaxy name?");
-
-string Name;
-
-Name = Console.ReadLine();
+string Name = Console.ReadLine();
 Thread.Sleep(1000);
 Console.WriteLine("hahahahahaaa, welcome " + Name + ", its great to meet you man!");
 Thread.Sleep(2000);
-
- 
-
 Console.WriteLine("Do you want to know what humanbeings have done to this earth?");
 Thread.Sleep(2000);
 Console.WriteLine("I dont think you can write english, You can Use Arrows To move arround");
 Thread.Sleep(2000);
 Console.WriteLine("Press upwards arrow ↑ For Yes \nPress Downwards ↓ arrow for no");
-
 string upar = "Press UpArrow ↑";
 string downar = "Press Downarrow ↓";
 string rightar = "Press Rightarrow →";
 string leftar = "Press Leftarrow ←";
-
- 
 if (Console.ReadKey().Key == ConsoleKey.UpArrow)
 {
     Console.WriteLine("im glad you wanna listen!");
@@ -108,3 +99,24 @@ Move(_key);
 
 
 Console.WriteLine("I hope you had some fun :) ");
+
+
+
+
+/*
+Random rnd = new Random();
+
+
+string[,] Herosname = new string[,] { {"Sokolala", "Bomshakalaka", "Tsikolima", "kosko", "morow", "shikololo", "sexy lady"},{"Sokolala is so strong with hand",
+ "Bomshakalaka have a very big head, like a unicorn he can splash anything",
+  "Tsikoloma is weirdly good","kosko is hot, he is twin of sexy lady",
+   "morow is a blonde good looking cat, but he is very dangeous even tho he is a small cute cat ",
+    "shikololo is good with taikwondo, like he is good with legs",
+     "Sexy lady, is already in the title, she will charm you my friends "}};
+int indx = rnd.Next(Herosname.Length);
+int indx2 = rnd.Next(Herosname[0,].Length);
+
+Console.WriteLine(Herosname[0, indx]);
+Console.WriteLine(Herosname[indx, 1]);
+Console.ReadKey();
+*\
