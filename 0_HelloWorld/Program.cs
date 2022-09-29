@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection.PortableExecutable;
+
 Random rnd = new Random();
 
 
@@ -22,8 +23,18 @@ if (Console.ReadKey().Key == ConsoleKey.UpArrow)
     Console.WriteLine("im glad you wanna listen!");
     Thread.Sleep(500);
     Console.WriteLine("Im just wondering what generation you wanna hear about?\n1.Gen " + upar + " \n2.Gen " + downar + " \n3.Gen "
-    + rightar + "\n4.Gen =" + leftar);
+    + rightar + "\n4.Gen " + leftar);
 }
+else
+{
+    Console.Clear();
+    Console.WriteLine("bye bye");
+    Thread.Sleep(5000);
+}
+
+
+
+
 void Move(ConsoleKey direction)
 {
     switch (direction)
@@ -52,19 +63,23 @@ void Move(ConsoleKey direction)
             break;
         case ConsoleKey.DownArrow:
         case ConsoleKey.S:
-            Console.WriteLine("Well" + Name + "Welcome to Gen 2, This is an exciting generation, \nbecause here The  \"Mortal Combat\" Was invented, So get ready to try it out");
+            Console.Clear();
+            Console.WriteLine("Well " + Name + " Welcome to Gen 2, This is an exciting generation, \nbecause here The  \"Mortal Combat\" Was invented, So get ready to try it out");
             string[] Herosname = new string[] { "Sokolala", "Bomshakalaka", "Tsikolima", "kosko", "morow", "shikololo", "sexy lady" };
             int indx = rnd.Next(Herosname.Length);
-            Thread.Sleep(1000);
-            Console.WriteLine($"Your Hero Name: {Herosname[indx]}" + "He did so much in the old time");
-            Thread.Sleep(1000);
+            Thread.Sleep(7000);
+            Console.WriteLine("Hangon we are finding a hero that fits for you");
+            Thread.Sleep(2000);
+            Console.Clear();
+            Console.WriteLine($"Your Hero Name: {Herosname[indx]}" + " one of the best Heros");
+            Console.WriteLine("Lets find out who is your enemy");
+            Thread.Sleep(7000);
             int tell = 0;
-            int speed = 50;
+            int speed = 10;
             for (int i = 0; speed < 350; i++)
             {
-
                 tell++;
-                if (tell == 4)
+                if (tell == Herosname.Length)
                 {
                     tell = 0;
                 }
@@ -75,17 +90,141 @@ void Move(ConsoleKey direction)
                 Console.Write(Herosname[tell]);
 
             }
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Clear();
+                Console.Write("Its ");
+                Thread.Sleep(500);
+                Console.Clear();
+                Console.Write(Herosname[tell]);
+                Thread.Sleep(700);
+
+            }
             string Ally = Herosname[indx];
             string enemy = Herosname[tell];
-            Thread.Sleep(500);
+            Thread.Sleep(2000);
             Console.Clear();
             Console.WriteLine("its going to be " + Ally + " Versus " + enemy);
             Thread.Sleep(500);
             Console.WriteLine("Good luck :)");
-            Console.ReadKey();
+            Thread.Sleep(6000);
             break;
         case ConsoleKey.RightArrow:
+        case ConsoleKey.D:
+            Console.Clear();
+            Console.WriteLine("Here is the math/algebra game, which was invented by Muhammad al-Khwarizmi, i hope you are good at algebra");
+            Console.WriteLine("You can choose \naddition? " + upar + " \nsubtraction? " + downar + " \nmultiplication "
+    + rightar + "\ndivision " + leftar);
+            var mathchoose = Console.ReadKey().Key;
+            int Firstnumber = 0;
+            int secondnumber = 0;
+            int sum = 0;
+            if (mathchoose == ConsoleKey.UpArrow)
+            {
+                Console.WriteLine("Im glad you want to try addition, write your first number");
+                Firstnumber = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Now your second number");
+                secondnumber = Convert.ToInt32(Console.ReadLine());
+                sum = Firstnumber + secondnumber;
+                Console.WriteLine($"Your Sum is {Firstnumber} + {secondnumber} = {sum} ");
+                int tim = 10;
+                for (int i = 0; i < 10; i++)
+                {
+                    tim--;
+                    Console.WriteLine($"Your Sum is {Firstnumber} + {secondnumber} = {sum} ");
+
+                    Console.Write($"                                                                                 Timer {tim} ");
+                    Console.WriteLine("countinuing");
+                    Thread.Sleep(500);
+                    Console.Clear();
+
+                }
+            }
+            else if (mathchoose == ConsoleKey.DownArrow)
+            {
+                Console.WriteLine("Im glad you want to try subtraction, write your first number");
+                Firstnumber = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Now your second number");
+                secondnumber = Convert.ToInt32(Console.ReadLine());
+                sum = Firstnumber - secondnumber;
+                Console.WriteLine($"Your Sum is {Firstnumber} - {secondnumber} = {sum} ");
+                int tim = 10;
+                for (int i = 0; i < 10; i++)
+                {
+                    tim--;
+                    Console.WriteLine($"Your Sum is {Firstnumber} - {secondnumber} = {sum} ");
+                    Console.Write($"                                                                                 Timer {tim} ");
+                    Console.WriteLine("countinuing");
+                    Thread.Sleep(500);
+                    Console.Clear();
+
+                }
+
+            }
+            else if (mathchoose == ConsoleKey.RightArrow)
+            {
+                Console.WriteLine("Im glad you want to try multiplication, write your first number");
+                Firstnumber = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Now your second number");
+                secondnumber = Convert.ToInt32(Console.ReadLine());
+                sum = Firstnumber * secondnumber;
+                Console.WriteLine($"Your Sum is {Firstnumber} * {secondnumber} = {sum} ");
+                int tim = 10;
+                for (int i = 0; i < 10; i++)
+                {
+                    tim--;
+                    Console.WriteLine($"Your Sum is {Firstnumber} * {secondnumber} = {sum} ");
+                    Console.Write($"                                                                                 Timer {tim} ");
+                    Console.WriteLine("countinuing");
+                    Thread.Sleep(1000);
+                    Console.Clear();
+
+                }
+            }
+            if (mathchoose == ConsoleKey.LeftArrow)
+            {
+                Console.WriteLine("Im glad you want to try division, write your first number");
+                void divi()
+                {
+                    Firstnumber = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Now your second number: ");
+                    secondnumber = Convert.ToInt32(Console.ReadLine());
+                    while (secondnumber == 0)
+                    {
+                        for (int i = 0; i < 3; i++)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("YOU CANT DIVIDE BY 0 !!!!!!!!");
+                            Thread.Sleep(300);
+                        }
+                        Console.WriteLine("TRY AGAIN");
+                        secondnumber = Convert.ToInt32(Console.ReadLine());
+                    }
+                    sum = Firstnumber / secondnumber;
+                    Console.WriteLine($"Your Sum is {Firstnumber} / {secondnumber} = {sum} ");
+                    int tim = 10;
+                    for (int i = 0; i < 10; i++)
+                    {
+                        tim--;
+                        Console.WriteLine($"Your Sum is {Firstnumber} / {secondnumber} = {sum} ");
+
+                        Console.Write($"                                                                                 Timer {tim} ");
+                        Console.WriteLine("countinuing");
+                        Thread.Sleep(500);
+                        Console.Clear();
+
+                    }
+                }
+
+            }
+            break;
         case ConsoleKey.LeftArrow:
+            break;
+        case ConsoleKey.Escape:
+            Console.Clear();
+            Console.WriteLine("it was great to meet you in earth anyway");
+            Console.WriteLine("Bye bye :)");
+            Thread.Sleep(3000);
             break;
         default:
             Console.WriteLine("Something is wrong, we are in default case we should be in somewhere else");
@@ -96,27 +235,24 @@ void Move(ConsoleKey direction)
 
 var _key = Console.ReadKey().Key;
 Move(_key);
+Console.Clear();
+Console.WriteLine("Wanna play again ? \n Yes " + upar + "\n No " + downar);
+var userchose = Console.ReadKey().Key;
+while (userchose == ConsoleKey.UpArrow)
+{
+    Console.WriteLine($"im glad you wanna play again {Name}");
+    Thread.Sleep(500);
+    Console.WriteLine("Im just wondering what generation you wanna hear about this time ?\n1.Gen " + upar + " \n2.Gen " + downar + " \n3.Gen "
+    + rightar + "\n4.Gen " + leftar);
+    _key = Console.ReadKey().Key;
+    Move(_key);
+    Console.WriteLine("Wanna play again ? \n Yes " + upar + "\n No " + downar);
+    userchose = Console.ReadKey().Key;
+}
+if (userchose == ConsoleKey.DownArrow)
+{
+    Console.WriteLine("I hope you had some fun :) ");
+
+}
 
 
-Console.WriteLine("I hope you had some fun :) ");
-
-
-
-
-/*
-Random rnd = new Random();
-
-
-string[,] Herosname = new string[,] { {"Sokolala", "Bomshakalaka", "Tsikolima", "kosko", "morow", "shikololo", "sexy lady"},{"Sokolala is so strong with hand",
- "Bomshakalaka have a very big head, like a unicorn he can splash anything",
-  "Tsikoloma is weirdly good","kosko is hot, he is twin of sexy lady",
-   "morow is a blonde good looking cat, but he is very dangeous even tho he is a small cute cat ",
-    "shikololo is good with taikwondo, like he is good with legs",
-     "Sexy lady, is already in the title, she will charm you my friends "}};
-int indx = rnd.Next(Herosname.Length);
-int indx2 = rnd.Next(Herosname[0,].Length);
-
-Console.WriteLine(Herosname[0, indx]);
-Console.WriteLine(Herosname[indx, 1]);
-Console.ReadKey();
-*\
