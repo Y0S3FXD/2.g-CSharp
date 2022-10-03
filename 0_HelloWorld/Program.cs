@@ -3,11 +3,18 @@ using System.Reflection.PortableExecutable;
 
 Random rnd = new Random();
 
+void ClearCurrentConsoleLine()
+{
+    int currentLineCursor = Console.CursorTop;
+    Console.SetCursorPosition(0, Console.CursorTop);
+    Console.Write(new string(' ', Console.WindowWidth));
+    Console.SetCursorPosition(0, currentLineCursor);
+}
 
 Console.WriteLine("Hello alien \nWhat is your galaxy name?");
 string Name = Console.ReadLine();
 Thread.Sleep(1000);
-Console.WriteLine("hahahahahaaa, welcome " + Name + ", its great to meet you man!");
+Console.WriteLine($"hahahahahaaa, welcome {Name}, its great to meet you man!");
 Thread.Sleep(2000);
 Console.WriteLine("Do you want to know what humanbeings have done to this earth?");
 Thread.Sleep(2000);
@@ -131,12 +138,12 @@ void Move(ConsoleKey direction)
                 for (int i = 0; i < 10; i++)
                 {
                     tim--;
-                    Console.WriteLine($"Your Sum is {Firstnumber} + {secondnumber} = {sum} ");
 
                     Console.Write($"                                                                                 Timer {tim} ");
                     Console.WriteLine("countinuing");
                     Thread.Sleep(500);
-                    Console.Clear();
+                    Console.SetCursorPosition(0, Console.CursorTop - 1);
+                    ClearCurrentConsoleLine();
 
                 }
             }
@@ -152,11 +159,11 @@ void Move(ConsoleKey direction)
                 for (int i = 0; i < 10; i++)
                 {
                     tim--;
-                    Console.WriteLine($"Your Sum is {Firstnumber} - {secondnumber} = {sum} ");
                     Console.Write($"                                                                                 Timer {tim} ");
                     Console.WriteLine("countinuing");
                     Thread.Sleep(500);
-                    Console.Clear();
+                    Console.SetCursorPosition(0, Console.CursorTop - 1);
+                    ClearCurrentConsoleLine();
 
                 }
 
@@ -173,11 +180,11 @@ void Move(ConsoleKey direction)
                 for (int i = 0; i < 10; i++)
                 {
                     tim--;
-                    Console.WriteLine($"Your Sum is {Firstnumber} * {secondnumber} = {sum} ");
                     Console.Write($"                                                                                 Timer {tim} ");
                     Console.WriteLine("countinuing");
                     Thread.Sleep(1000);
-                    Console.Clear();
+                    Console.SetCursorPosition(0, Console.CursorTop - 1);
+                    ClearCurrentConsoleLine();
 
                 }
             }
@@ -206,19 +213,36 @@ void Move(ConsoleKey direction)
                     for (int i = 0; i < 10; i++)
                     {
                         tim--;
-                        Console.WriteLine($"Your Sum is {Firstnumber} / {secondnumber} = {sum} ");
+
 
                         Console.Write($"                                                                                 Timer {tim} ");
                         Console.WriteLine("countinuing");
                         Thread.Sleep(500);
-                        Console.Clear();
+                        Console.SetCursorPosition(0, Console.CursorTop - 1);
+                        ClearCurrentConsoleLine();
 
                     }
                 }
+                divi();
 
             }
             break;
         case ConsoleKey.LeftArrow:
+        case ConsoleKey.A:
+            
+            int time=10;
+            for (int i = 0; i < 10; i++)
+                    {
+                        time--;
+
+
+                        Console.Write($" Generatino 4 is comming soon after 999 light years                                 Timer {time} ");
+                        Console.WriteLine("going on");
+                        Thread.Sleep(500);
+                        Console.SetCursorPosition(0, Console.CursorTop - 1);
+                        ClearCurrentConsoleLine();
+
+                    }
             break;
         case ConsoleKey.Escape:
             Console.Clear();
